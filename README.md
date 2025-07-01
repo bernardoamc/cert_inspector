@@ -36,3 +36,16 @@ sudo PWD=$PWD make <command>
 ```bash
 docker run --rm -it cert_inspector:latest sh
 ```
+
+### Targets
+
+Let's say you want to monitor subdomains from every Bug Bounty program.
+
+1. Download the list provided by Project Discovery
+2. Aggregate domains using `jq`
+2. Create a targets.txt file with domains
+
+```bash
+curl -O https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/main/chaos-bugbounty-list.json
+jq -r '.programs[].domains[]' chaos-bugbounty-list.json > targets.txt
+```
