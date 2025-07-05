@@ -71,4 +71,3 @@ func main() {
 
 	runWithRestart(*binary, args, *restartDelay, stdoutLogger, stderrLogger)
 }
-

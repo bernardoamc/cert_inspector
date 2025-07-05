@@ -13,6 +13,7 @@ It is designed to:
 ## 🚀 Getting Started
 
 ```bash
+make test              # runs tests for the project
 make build             # builds ./build/cert_inspector
 make run               # builds & runs locally (adds logs/ and targets.txt, needs gungnir)
 make docker-build      # builds the Docker image

@@ -8,6 +8,10 @@ DOCKER_VOLUME=cert_logs
 .PHONY: all
 all: build
 
+.PHONY: test
+test:
+	go test ./...
+
 ## 🔨 Build Go binary locally
 .PHONY: build
 build:

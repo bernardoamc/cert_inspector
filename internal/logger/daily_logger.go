@@ -56,11 +56,9 @@ func (dl *DailyLogger) WriteLine(line string) error {
 		return err
 	}
 
-	timestamped := fmt.Sprintf("[%s] %s\n", time.Now().Format(time.RFC3339), line)
-
 	dl.mu.Lock()
 	defer dl.mu.Unlock()
-	_, err := dl.file.WriteString(timestamped)
+	_, err := fmt.Fprintln(dl.file, line)
 	return err
 }
 
